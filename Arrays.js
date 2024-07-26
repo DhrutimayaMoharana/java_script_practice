@@ -163,7 +163,7 @@ console.log("numbers Array after sorted descending : ", numbers);
 const animals = ['pigs', 'goats', 'sheep'];
 
 // let count = animals.push('chicken');
-let count = animals.push('chicken','cat','cow');
+let count = animals.push('chicken', 'cat', 'cow');
 console.log("Count of animals array  : " + count);
 console.log(animals);
 
@@ -180,10 +180,10 @@ console.log(animals);
  * pop method
  */
 
-const plants = ['broccoli','cauliflower','kale','tomato']
+const plants = ['broccoli', 'cauliflower', 'kale', 'tomato']
 console.log(plants);
 var check = plants.pop();
-console.log(plants); 
+console.log(plants);
 console.log(check);
 
 /**
@@ -192,7 +192,7 @@ console.log(check);
 
 console.log(plants);
 var check = plants.shift();
-console.log(plants); 
+console.log(plants);
 console.log(check);
 
 
@@ -203,12 +203,114 @@ console.log(check);
  * 
  */
 
-const months = ['Jan','Feb','March','July']
+const months = ['Jan', 'Feb', 'March', 'July']
 
-const addNewMonth = months.splice(3,0,'April')
+const addNewMonth = months.splice(3, 0, 'April')
 
 console.log(addNewMonth);
 console.log(months);
 
+const indexOfMonth = months.indexOf("Jan");
 
-//  Last watch 5:46:00 
+if (indexOfMonth != -1) {
+    const updateMonth = months.splice(indexOfMonth, Infinity, 'January');
+    console.log(months);
+    console.log(updateMonth);
+} else {
+    console.log('No such data found!!!!');
+}
+
+/** 
+ * 
+ * Map and Reduce method
+ * 
+ * 
+ * map :- Returns a new array without mutating the original array containing the results
+ * of calling a function on every element in this array
+*/
+
+let array1 = [1, 4, 5, 9, 16, 56, 25];
+
+let modifiedArray1 = array1.map((currElem, index, arrObj) => currElem > 9);
+
+console.log(array1);
+console.log(modifiedArray1);
+
+let modifiedArray2 = array1.map((value, index, arrayObj) =>
+    value > 9 ? `Index no = ${index} and the value is ${value}` : null
+);
+
+modifiedArray2.forEach((value) => value != null ? console.log(value) : null);
+
+
+
+// Find sqrt of each element of an array
+
+let numberArray = [25, 36, 49, 64, 81];
+
+let arrSqrt = numberArray.map((value) => value ** (1 / 2));
+// let arrSqrt = numberArray.map((value) => Math.sqrt(value));
+
+console.log(arrSqrt);
+
+let numberArray2 = [2, 3, 4, 6, 8];
+
+let modifiedArray3 = numberArray2
+    .map((value) => value * 2)
+    .filter((currElem) => currElem > 10);
+
+console.log(modifiedArray3);
+
+/**
+ * Reduce method
+ * 
+ * flatten an array means to convert the 3d or 2d array
+ * into a single dimensional array
+ * 
+ * 
+ * the reduce() mehtod executes a reducer function
+ * (that you provide) on each element of the array,
+ * resulting in single output value.
+ * 
+ * The reducer funtion takes four arguments:
+ * 
+ * Accumulator
+ * Current Value
+ * Current Index
+ * Source Array
+ * 
+ */
+
+
+let newArr1 = [5, 6, 2];
+
+let sumNewArray1 = newArr1
+    .reduce((accumulator, currElem, index, arrayObj) => {
+        console.log("Accumulator ::  " + accumulator);
+        console.log("Current :: " + currElem);
+        return accumulator + currElem;
+    }, 10
+    );
+
+console.log(newArr1);
+console.log(`Sum of ${newArr1} is ${sumNewArray1}`);
+
+
+
+// Fatten an array
+// Convert 2d and 3d array into one dimensional array
+
+const newArr2 = [
+    ['zone_1', 'zone_2'],
+    ['zone_3', 'zone_4'],
+    ['zone_5', 'zone_6'],
+    ['zone_7', ['zone_8', 'zone_9']]
+];
+
+let flatNewArr2 = newArr2
+    .reduce((accum, currElem) =>
+        accum.concat(currElem)
+    );
+
+console.log(newArr2);
+console.log(flatNewArr2);
