@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <button onclick="myFunction()">TRY</button>
+    <p id="demo"></p>
+    <p id="newdemo"></p>
+
+    <h1 id="timedemo"></h1>
+
+    <script>
+
+        function myFunction() {
+            var t = new Date();
+            t.setHours(5);
+            document.getElementById("demo").innerHTML = t;
+        }
+
+        (function () {
+            setInterval(() => {
+                var d = new Date().toString();
+                document.getElementById("newdemo").innerHTML = d;
+            }, 1000);
+        })();
+
+        (function () {
+            setInterval(() => {
+                var d = new Date().toLocaleTimeString();
+                document.getElementById("timedemo").innerHTML = d;
+            }, 1000);
+        })();
+
+    </script>
+</body>
+
+</html>
