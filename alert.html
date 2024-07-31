@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <button class="btn" onclick="alerts()">Google</button>
+
+    <script>
+        function alerts() {
+            alert(location.href); // Show the current URL
+            if (confirm("Want to Visit Google?")) { // Confirm by click Ok or Cancle Button
+                location.href = "https://www.google.com"; // Redirect to the assigned URL
+            }
+        }
+    </script>
+
+</body>
+
+</html>

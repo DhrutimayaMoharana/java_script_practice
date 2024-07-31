@@ -129,5 +129,26 @@
  */
 
 
+/**
+ * Funcitons alert/confirm/promt are also a part of BOM:
+ * they are directly not  
+ */
+
+alert(location.href); // Show the current URL
+if (confirm("Want to Visit Google?")) { // Confirm by click Ok or Cancle Button
+    location.href = "https://www.google.com"; // Redirect to the assigned URL
+}
 
 
+
+/***
+ *                      DOM
+ *                  
+ *                    document
+ * 
+ *                     <HTML>
+ * 
+ *             <BODY>           <>
+ * 
+ * 
+ */
