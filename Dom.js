@@ -147,8 +147,60 @@ if (confirm("Want to Visit Google?")) { // Confirm by click Ok or Cancle Button
  *                    document
  * 
  *                     <HTML>
- * 
- *             <BODY>           <>
+ *                       .
+ *                .   .     .    .
+ *                .              .
+ *             <BODY>           <HEAD>
+ *                .
+ *          .   .   .   .
+ *          .           .
+ *         <a>         <p>
  * 
  * 
  */
+
+/**
+ * Navigate through the DOM
+ * 
+ * 1: document.documentElement
+ *   return the Element that is the root element of the document.
+ * 2: document.head
+ * 3: document.body
+ * 4: document.body.childNodes (include tab, enter and whitespace)
+ *    list of the direct children only
+ * 5: document.children (without text nodes, only regular elements)
+ * 6: document.childNodes.length
+ */
+
+/**
+ * Now to check wheather an element has child nodes or not?
+ * we will use hasChildNodes()
+ * 
+ */
+
+/**
+ * How to find the child in DOM tree
+ * 
+ * firstChild vs firstElementChild
+ * lastChild vs lastElementChild
+ * 
+ * const data =  document.body.firstElementChild;
+ * data
+ * data.firstElementChild
+ * data.firstElementChild.firstElementChild
+ */
+
+/**
+ * How to find of access the siblings
+ * 
+ * document.body.nextSibling
+ * document.body.nextElementSibling
+ * document.body.previousSibling
+ * document.body.previousElementSibling
+ */
+
+/**
+ * How to search the elements and the references
+ * 
+ */
+
